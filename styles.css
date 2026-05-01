@@ -1,0 +1,631 @@
+/* ================================================================
+   PORTFOLIO STYLESHEET
+   Robotics & Controls Engineering Portfolio
+   ================================================================
+   Structure:
+   1. CSS Variables (edit colors/fonts here)
+   2. Reset & Base
+   3. Navbar
+   4. Hero
+   5. Section Shared Styles
+   6. Project Cards Grid
+   7. Case Study Sections
+   8. Resume Section
+   9. Contact Section
+   10. Footer
+   11. Responsive (mobile breakpoints)
+   ================================================================ */
+
+
+/* ----------------------------------------------------------------
+   1. CSS VARIABLES
+   Edit these to change the color scheme and typography site-wide.
+   ---------------------------------------------------------------- */
+:root {
+  /* Colors */
+  --bg:          #f5f4f0;          /* Page background — warm off-white */
+  --surface:     #ffffff;          /* Card and section surfaces */
+  --border:      #d6d3cc;          /* Lines, dividers */
+  --text-primary:   #1a1916;       /* Main body text */
+  --text-secondary: #6b6860;       /* Labels, captions, secondary text */
+  --accent:      #c1440e;          /* Primary accent — engineering orange-red */
+  --accent-hover:#9e360b;          /* Accent on hover */
+
+  /* Typography */
+  --font-display: 'Newsreader', Georgia, serif;      /* Section headings */
+  --font-body:    'DM Sans', system-ui, sans-serif;  /* Body text */
+  --font-mono:    'DM Mono', 'Courier New', monospace; /* Labels, tags, index numbers */
+
+  /* Spacing */
+  --max-width: 1000px;
+  --section-gap: 6rem;
+  --card-radius: 4px;
+}
+
+
+/* ----------------------------------------------------------------
+   2. RESET & BASE
+   ---------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  /* Subtle dot-grid background — gives it an engineering paper feel */
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h4 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+
+/* ----------------------------------------------------------------
+   SHARED BUTTON STYLES
+   .btn-primary = filled; .btn-outline = bordered
+   ---------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--card-radius);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  letter-spacing: 0.03em;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: 1.5px solid var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--text-primary);
+}
+
+
+/* ----------------------------------------------------------------
+   3. NAVBAR
+   ---------------------------------------------------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(245, 244, 240, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+}
+
+.navbar-name {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar nav a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+
+.navbar nav a:hover {
+  color: var(--text-primary);
+}
+
+
+/* ----------------------------------------------------------------
+   4. HERO SECTION
+   ---------------------------------------------------------------- */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 6rem 2rem 5rem;
+}
+
+.hero-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-name {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.hero-role {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-tagline {
+  max-width: 520px;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.hero-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+
+/* ----------------------------------------------------------------
+   5. SHARED SECTION STYLES
+   ---------------------------------------------------------------- */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--section-gap) 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  margin-bottom: 0.6rem;
+}
+
+.section-header h2 {
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+}
+
+
+/* ----------------------------------------------------------------
+   6. PROJECT CARDS GRID
+   ---------------------------------------------------------------- */
+.project-grid {
+  display: grid;
+  /* 2-column grid on desktop, 1-column on mobile */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  border-color: var(--text-secondary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* Image wrapper — sets a fixed aspect ratio for project thumbnails */
+.card-img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #e8e5df; /* Placeholder bg when image is missing */
+  overflow: hidden;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .card-img-wrap img {
+  transform: scale(1.02);
+}
+
+/* Index number badge (01, 02, ...) */
+.card-index {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: rgba(245, 244, 240, 0.88);
+  color: var(--text-secondary);
+  padding: 0.2rem 0.45rem;
+  border-radius: 2px;
+  letter-spacing: 0.06em;
+}
+
+.card-body {
+  padding: 1.25rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.75rem;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.card-summary {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* Tech tag list — shared between cards and case studies */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag-list li {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+}
+
+.card-link {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin-top: auto;
+  align-self: flex-start;
+  transition: color 0.15s;
+}
+
+.card-link:hover {
+  color: var(--accent-hover);
+}
+
+
+/* ----------------------------------------------------------------
+   7. CASE STUDY SECTIONS
+   ---------------------------------------------------------------- */
+
+/* Scroll offset so the sticky navbar doesn't cover the heading */
+.case-study {
+  scroll-margin-top: 4.5rem;
+}
+
+.case-header {
+  margin-bottom: 2rem;
+}
+
+.case-header h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+/* Project image / video container */
+.case-media {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  background: #e8e5df;
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.case-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive iframe wrapper for embedded videos */
+.video-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Case study content blocks — each subsection */
+.case-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 720px;
+}
+
+.case-block p {
+  font-size: 0.975rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.case-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* "Back to projects" link at bottom of each case study */
+.back-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  margin-top: 2.5rem;
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: var(--text-primary);
+}
+
+
+/* ----------------------------------------------------------------
+   8. RESUME SECTION
+   ---------------------------------------------------------------- */
+.resume-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+
+.resume-block h4 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.resume-entry {
+  margin-bottom: 1.25rem;
+}
+
+.resume-entry:last-child {
+  margin-bottom: 0;
+}
+
+.resume-title {
+  display: block;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 0.15rem;
+}
+
+.resume-date {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+
+.resume-entry p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+
+/* ----------------------------------------------------------------
+   9. CONTACT SECTION
+   ---------------------------------------------------------------- */
+.contact-intro {
+  max-width: 480px;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 0.975rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 520px;
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+/* Each contact row */
+.contact-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-item:hover {
+  background: var(--bg);
+}
+
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.contact-value {
+  font-size: 0.9rem;
+  color: var(--accent);
+  word-break: break-all;
+  text-align: right;
+}
+
+
+/* ----------------------------------------------------------------
+   10. FOOTER
+   ---------------------------------------------------------------- */
+.footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+
+/* ----------------------------------------------------------------
+   11. RESPONSIVE — MOBILE BREAKPOINTS
+   Main breakpoint: 640px (single-column layout)
+   ---------------------------------------------------------------- */
+@media (max-width: 640px) {
+
+  .navbar {
+    padding: 0.9rem 1.25rem;
+  }
+
+  .navbar nav {
+    gap: 1.25rem;
+  }
+
+  .hero {
+    padding: 3.5rem 1.25rem 3rem;
+  }
+
+  .section {
+    padding: 3.5rem 1.25rem;
+  }
+
+  /* Stack project cards to 1 column on mobile */
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+    gap: 0.3rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .contact-value {
+    text-align: left;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar nav a:nth-child(3) {
+    /* Hide the third nav link on very small screens if needed */
+    /* Remove this rule if you want all 3 links visible */
+  }
+}

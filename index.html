@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ============================================================
+       EDIT: Change the title to your name + role
+       ============================================================ -->
+  <title>Your Name — Robotics & Controls Engineer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Fonts: DM Mono for code/labels, Newsreader for headings, DM Sans for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Newsreader:ital,wght@0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       Edit: your name, and update anchor links if you rename sections
+       ============================================================ -->
+  <header class="navbar">
+    <a href="#hero" class="navbar-name">Your Name</a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- ============================================================
+       HERO SECTION
+       Edit: name, role, tagline, and social/resume links
+       ============================================================ -->
+  <section id="hero" class="hero">
+    <div class="hero-label">[ Portfolio ]</div>
+    <h1 class="hero-name">Your Name</h1>
+    <p class="hero-role">Robotics &amp; Controls Engineering Student</p>
+    <p class="hero-tagline">
+      <!-- EDIT: One sentence about what you're interested in or studying -->
+      I build systems that move, sense, and decide — from embedded controllers to autonomous field robots.
+    </p>
+    <div class="hero-links">
+      <!-- EDIT: Update href values to your actual files/profiles -->
+      <a href="resume.pdf" class="btn btn-primary" target="_blank">Resume ↗</a>
+      <a href="https://github.com/yourusername" class="btn btn-outline" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername" class="btn btn-outline" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PROJECTS SECTION — CARD GRID
+       This is the main focus of the page.
+
+       HOW TO ADD A NEW PROJECT CARD:
+       1. Copy one <article class="project-card"> ... </article> block below.
+       2. Paste it after the last card inside <div class="project-grid">.
+       3. Update: image src, project title, summary text, tags, and the href
+          on the "View Case Study" button to match the new case study section ID.
+       4. Add a matching case study section below (see the case study template).
+       ============================================================ -->
+  <section id="projects" class="section">
+    <div class="section-header">
+      <span class="section-label">// Engineering Projects</span>
+      <h2>Selected Work</h2>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- ── PROJECT CARD 1 ─────────────────────────────────────── -->
+      <article class="project-card">
+        <div class="card-img-wrap">
+          <!-- EDIT: Replace with your actual image path -->
+          <img src="images/project-amiga.jpg" alt="Autonomous Farming Robot" loading="lazy" />
+          <span class="card-index">01</span>
+        </div>
+        <div class="card-body">
+          <!-- EDIT: Project title -->
+          <h3 class="card-title">Autonomous Farming Robot — Amiga Platform</h3>
+          <!-- EDIT: 1–2 sentence summary of what the project is and what you did -->
+          <p class="card-summary">
+            Placeholder: Brief summary of the project. What problem did it solve? What was your role? Keep it to 1–2 sentences.
+          </p>
+          <!-- EDIT: Add/remove tags to reflect the tools and tech you used -->
+          <ul class="tag-list">
+            <li>ROS2</li>
+            <li>Python</li>
+            <li>Amiga SDK</li>
+            <li>Path Planning</li>
+          </ul>
+          <!-- EDIT: Update the href to match the case study section id -->
+          <a href="#case-amiga" class="card-link">View Case Study →</a>
+        </div>
+      </article>
+
+      <!-- ── PROJECT CARD 2 ─────────────────────────────────────── -->
+      <article class="project-card">
+        <div class="card-img-wrap">
+          <img src="images/project-ransac.jpg" alt="Vision-Based Row Detection" loading="lazy" />
+          <span class="card-index">02</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Vision-Based Row Detection with RANSAC</h3>
+          <p class="card-summary">
+            Placeholder: Brief summary. What computer vision problem were you solving? What algorithm or pipeline did you build?
+          </p>
+          <ul class="tag-list">
+            <li>OpenCV</li>
+            <li>RANSAC</li>
+            <li>Python</li>
+            <li>Camera Calibration</li>
+          </ul>
+          <a href="#case-ransac" class="card-link">View Case Study →</a>
+        </div>
+      </article>
+
+      <!-- ── PROJECT CARD 3 ─────────────────────────────────────── -->
+      <article class="project-card">
+        <div class="card-img-wrap">
+          <img src="images/project-weeder.jpg" alt="Rear-Mounted Weeder Control System" loading="lazy" />
+          <span class="card-index">03</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Rear-Mounted Weeder Control System</h3>
+          <p class="card-summary">
+            Placeholder: Brief summary. Describe the control architecture, what the system actuates, and the outcome.
+          </p>
+          <ul class="tag-list">
+            <li>C++</li>
+            <li>PID Control</li>
+            <li>CAN Bus</li>
+            <li>Embedded Systems</li>
+          </ul>
+          <a href="#case-weeder" class="card-link">View Case Study →</a>
+        </div>
+      </article>
+
+      <!-- ── PROJECT CARD 4 ─────────────────────────────────────── -->
+      <article class="project-card">
+        <div class="card-img-wrap">
+          <img src="images/project-sensors.jpg" alt="Embedded Sensor / Object Scanner" loading="lazy" />
+          <span class="card-index">04</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Embedded Sensor / Object Scanner Project</h3>
+          <p class="card-summary">
+            Placeholder: What sensors did you use? What did the scanner detect or map? What microcontroller platform?
+          </p>
+          <ul class="tag-list">
+            <li>STM32</li>
+            <li>I2C / SPI</li>
+            <li>C</li>
+            <li>Signal Processing</li>
+          </ul>
+          <a href="#case-sensors" class="card-link">View Case Study →</a>
+        </div>
+      </article>
+
+    </div><!-- /project-grid -->
+  </section>
+
+
+  <!-- ============================================================
+       CASE STUDY SECTIONS
+       One section per project. Each has the same structure so they
+       look consistent and are easy to fill in.
+
+       HOW TO ADD A NEW CASE STUDY:
+       1. Copy one entire <section class="case-study"> block below.
+       2. Change the id to match the href on your new project card
+          (e.g., id="case-newproject").
+       3. Fill in each subsection. Delete subsections you don't need.
+       ============================================================ -->
+
+  <!-- ── CASE STUDY 1: Amiga ────────────────────────────────────── -->
+  <section id="case-amiga" class="case-study section">
+    <div class="case-header">
+      <span class="section-label">// Case Study 01</span>
+      <h2>Autonomous Farming Robot — Amiga Platform</h2>
+    </div>
+
+    <!-- EDIT: Replace with project image or embed a YouTube iframe -->
+    <div class="case-media">
+      <img src="images/project-amiga.jpg" alt="Amiga Platform project image" />
+      <!-- To embed a video instead, replace the <img> above with:
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+      </div>
+      -->
+    </div>
+
+    <div class="case-body">
+
+      <div class="case-block">
+        <h4>Problem</h4>
+        <!-- EDIT: What problem were you solving? Keep it concrete. -->
+        <p>Placeholder: Describe the engineering problem or challenge this project addressed. What was the gap or need?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>My Role</h4>
+        <!-- EDIT: What specifically did YOU do on this project? -->
+        <p>Placeholder: Describe your specific contribution. Were you working alone, or on a team? What were you responsible for?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Technical Approach</h4>
+        <!-- EDIT: How did you solve it? Walk through your technical decisions. -->
+        <p>Placeholder: Describe the architecture, algorithms, or design choices you made. Why did you choose this approach over alternatives?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Results &amp; Metrics</h4>
+        <!-- EDIT: What did you achieve? Use numbers where possible. -->
+        <p>Placeholder: Describe the outcome. Did it work? By how much? Include any measurements, benchmarks, or demo results.</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Tools &amp; Technologies</h4>
+        <!-- EDIT: Full list of tools, frameworks, hardware used -->
+        <ul class="tag-list">
+          <li>ROS2</li>
+          <li>Python</li>
+          <li>Amiga SDK</li>
+          <li>Linux</li>
+          <li>Add more tags…</li>
+        </ul>
+      </div>
+
+      <div class="case-block">
+        <h4>Links</h4>
+        <!-- EDIT: Add actual links; remove any that don't apply -->
+        <div class="case-links">
+          <a href="https://github.com/yourusername/project-repo" class="btn btn-outline" target="_blank">GitHub Repo ↗</a>
+          <a href="#" class="btn btn-outline" target="_blank">Demo / Video ↗</a>
+          <a href="#" class="btn btn-outline" target="_blank">Report / Paper ↗</a>
+        </div>
+      </div>
+
+    </div><!-- /case-body -->
+    <a href="#projects" class="back-link">← Back to all projects</a>
+  </section>
+
+
+  <!-- ── CASE STUDY 2: RANSAC ───────────────────────────────────── -->
+  <section id="case-ransac" class="case-study section">
+    <div class="case-header">
+      <span class="section-label">// Case Study 02</span>
+      <h2>Vision-Based Row Detection with RANSAC</h2>
+    </div>
+
+    <div class="case-media">
+      <img src="images/project-ransac.jpg" alt="Row Detection project image" />
+    </div>
+
+    <div class="case-body">
+
+      <div class="case-block">
+        <h4>Problem</h4>
+        <p>Placeholder: What detection challenge existed? What were the environmental constraints (lighting, crop type, camera angle)?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>My Role</h4>
+        <p>Placeholder: Your specific contribution — algorithm design, data collection, integration, testing?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Technical Approach</h4>
+        <p>Placeholder: How does your RANSAC pipeline work? What preprocessing steps? How do you handle outliers or edge cases?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Results &amp; Metrics</h4>
+        <p>Placeholder: Detection accuracy, frame rate, robustness under different conditions. Any comparison to a baseline?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Tools &amp; Technologies</h4>
+        <ul class="tag-list">
+          <li>OpenCV</li>
+          <li>Python</li>
+          <li>RANSAC</li>
+          <li>NumPy</li>
+          <li>Add more tags…</li>
+        </ul>
+      </div>
+
+      <div class="case-block">
+        <h4>Links</h4>
+        <div class="case-links">
+          <a href="https://github.com/yourusername/project-repo" class="btn btn-outline" target="_blank">GitHub Repo ↗</a>
+          <a href="#" class="btn btn-outline" target="_blank">Demo / Video ↗</a>
+        </div>
+      </div>
+
+    </div>
+    <a href="#projects" class="back-link">← Back to all projects</a>
+  </section>
+
+
+  <!-- ── CASE STUDY 3: Weeder ───────────────────────────────────── -->
+  <section id="case-weeder" class="case-study section">
+    <div class="case-header">
+      <span class="section-label">// Case Study 03</span>
+      <h2>Rear-Mounted Weeder Control System</h2>
+    </div>
+
+    <div class="case-media">
+      <img src="images/project-weeder.jpg" alt="Weeder Control System image" />
+    </div>
+
+    <div class="case-body">
+
+      <div class="case-block">
+        <h4>Problem</h4>
+        <p>Placeholder: What physical or control problem needed solving? What constraints did the weeder mechanism impose?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>My Role</h4>
+        <p>Placeholder: Did you design the controller, write firmware, build the electrical system, or all of the above?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Technical Approach</h4>
+        <p>Placeholder: Control loop design, communication protocol (CAN, serial, etc.), state machine, safety logic — describe the architecture.</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Results &amp; Metrics</h4>
+        <p>Placeholder: Did the system perform reliably in field testing? Latency, accuracy, weed removal rate, uptime, etc.</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Tools &amp; Technologies</h4>
+        <ul class="tag-list">
+          <li>C++</li>
+          <li>PID Control</li>
+          <li>CAN Bus</li>
+          <li>Embedded Linux</li>
+          <li>Add more tags…</li>
+        </ul>
+      </div>
+
+      <div class="case-block">
+        <h4>Links</h4>
+        <div class="case-links">
+          <a href="https://github.com/yourusername/project-repo" class="btn btn-outline" target="_blank">GitHub Repo ↗</a>
+          <a href="#" class="btn btn-outline" target="_blank">Demo / Video ↗</a>
+        </div>
+      </div>
+
+    </div>
+    <a href="#projects" class="back-link">← Back to all projects</a>
+  </section>
+
+
+  <!-- ── CASE STUDY 4: Sensors ──────────────────────────────────── -->
+  <section id="case-sensors" class="case-study section">
+    <div class="case-header">
+      <span class="section-label">// Case Study 04</span>
+      <h2>Embedded Sensor / Object Scanner Project</h2>
+    </div>
+
+    <div class="case-media">
+      <img src="images/project-sensors.jpg" alt="Object Scanner project image" />
+    </div>
+
+    <div class="case-body">
+
+      <div class="case-block">
+        <h4>Problem</h4>
+        <p>Placeholder: What did this scanner need to detect or map? What were the constraints (size, power, real-time requirements)?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>My Role</h4>
+        <p>Placeholder: Hardware selection, firmware, data pipeline, visualization — what was your specific scope?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Technical Approach</h4>
+        <p>Placeholder: Sensor fusion strategy, MCU architecture, communication interfaces, data processing pipeline.</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Results &amp; Metrics</h4>
+        <p>Placeholder: Range, accuracy, scan rate, power consumption, or any other relevant metrics. What worked well and what didn't?</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Tools &amp; Technologies</h4>
+        <ul class="tag-list">
+          <li>STM32</li>
+          <li>C</li>
+          <li>I2C / SPI</li>
+          <li>UART</li>
+          <li>Add more tags…</li>
+        </ul>
+      </div>
+
+      <div class="case-block">
+        <h4>Links</h4>
+        <div class="case-links">
+          <a href="https://github.com/yourusername/project-repo" class="btn btn-outline" target="_blank">GitHub Repo ↗</a>
+          <a href="#" class="btn btn-outline" target="_blank">Demo / Video ↗</a>
+        </div>
+      </div>
+
+    </div>
+    <a href="#projects" class="back-link">← Back to all projects</a>
+  </section>
+
+
+  <!-- ============================================================
+       RESUME SECTION
+       Edit: education, experience entries, and the resume.pdf link
+       ============================================================ -->
+  <section id="resume" class="section resume-section">
+    <div class="section-header">
+      <span class="section-label">// Background</span>
+      <h2>Resume</h2>
+    </div>
+
+    <div class="resume-body">
+
+      <!-- EDIT: Fill in your education -->
+      <div class="resume-block">
+        <h4>Education</h4>
+        <div class="resume-entry">
+          <span class="resume-title">B.S. in [Your Major] — [Your University]</span>
+          <span class="resume-date">Expected [Month Year]</span>
+          <p>Relevant coursework: Placeholder — e.g., Feedback Control Systems, Embedded Systems, Robotics, Signal Processing</p>
+        </div>
+      </div>
+
+      <!-- EDIT: Fill in experience entries. Duplicate the .resume-entry block for each role. -->
+      <div class="resume-block">
+        <h4>Experience</h4>
+        <div class="resume-entry">
+          <span class="resume-title">Placeholder Role — Placeholder Company / Lab</span>
+          <span class="resume-date">Month Year – Month Year</span>
+          <p>Placeholder: One or two sentences about what you built or contributed.</p>
+        </div>
+        <div class="resume-entry">
+          <span class="resume-title">Placeholder Role — Placeholder Company / Lab</span>
+          <span class="resume-date">Month Year – Month Year</span>
+          <p>Placeholder: One or two sentences about what you built or contributed.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EDIT: Make sure resume.pdf is in the same folder as index.html -->
+    <a href="resume.pdf" class="btn btn-primary" target="_blank">Download Full Resume (PDF) ↗</a>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT SECTION
+       Edit: email address and social profile URLs
+       ============================================================ -->
+  <section id="contact" class="section contact-section">
+    <div class="section-header">
+      <span class="section-label">// Get in Touch</span>
+      <h2>Contact</h2>
+    </div>
+    <p class="contact-intro">
+      <!-- EDIT: A short line about what kind of opportunities you're open to -->
+      Open to internship and research opportunities in robotics, controls, and embedded systems.
+    </p>
+    <div class="contact-links">
+      <!-- EDIT: Replace with your actual email and profile URLs -->
+      <a href="mailto:youremail@university.edu" class="contact-item">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">youremail@university.edu</span>
+      </a>
+      <a href="https://linkedin.com/in/yourusername" class="contact-item" target="_blank">
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">linkedin.com/in/yourusername</span>
+      </a>
+      <a href="https://github.com/yourusername" class="contact-item" target="_blank">
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value">github.com/yourusername</span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       Edit: your name and year
+       ============================================================ -->
+  <footer class="footer">
+    <span>© <span id="year"></span> Your Name</span>
+    <span>Built with HTML, CSS &amp; no frameworks</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
